@@ -66,11 +66,10 @@ class Game{
             touches = [];
         }
 
-        if(keyDown('D') || keyDown('d') && dead == false && touches.length > 0){
-            player.x = player.x + 20;
+        if(keyDown('D') || keyDown('d') && dead == false && player.overlapPoint(touches[0].x, touches[0].y)){
+            player.x = player.x + 50;
             facingRight = true;
             facingLeft = false;
-            touches = [];
 
             player.changeAnimation("w",playerWalk);
         }else if(keyDown('A') || keyDown('a') && dead == false){
